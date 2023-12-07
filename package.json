@@ -9,7 +9,13 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "node-sass": "^9.0.0",
+    "router": "^1.3.8",
+    "sass-loader": "^13.3.2",
+    "vue": "^3.3.10",
+    "vue-icons": "^2.0.0",
+    "vue-materialize": "^1.0.0",
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -18,7 +24,7 @@
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
+    "eslint-plugin-vue": "^8.7.1"
   },
   "eslintConfig": {
     "root": true,
