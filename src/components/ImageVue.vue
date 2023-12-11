@@ -1,26 +1,36 @@
 <template>
-
-
-    <div>
-    <h1> DESHAYES Nicolas </h1>
-    <p> Developpeur WEB Full stack (Html5,VueJs3,Css3,GitHub)  formé par le Centre Européen de formations</p>
-    </div>
-
-
-    <div class="background-container">
-      <img alt="Vue logo" src="../assets/Fond.jpg" class="resized-image"> 
-      <HelloWorld msg=""/>
-      
-
-    </div>
-
-    <div class="boutons">
-        <button>precedent</button>
-        <button>suivant</button>
-        
-
-    </div>  
+  
+  <div>
     
+    <div class="background-container">
+      <img
+        alt="Vue logo"
+        src="../assets/Fond.jpg"
+        class="resized-image"
+        @click="openModal"
+      />
+      <dialog v-if="isModalOpen" @close="closeModal" @click="closeModalOutside">
+        <div class="modal-content">
+          <button class="close-button" @click="closeModal">Fermer la modal</button>
+          <h2> Portfolio </h2>
+          <p>Date de creation:11/12/2023 </p>
+          <p>Technologies utilisées : vue js3 / github /Html/Java script/Css </p>
+          <p>
+
+            <a :href="project.visitLink" target="_blank">Visiter le site ou le fichier PDF</a>
+          </p>
+          <p>
+            <a v-if="project.githubLink" :href="project.githubLink" target="_blank">Repository GitHub</a>
+          </p>
+        </div>
+      </dialog>
+    </div>
+
+  </div>
+
+  <div>
+
+
     <div class="formulaire">
         <h2>Formulaire de Contact</h2>
         <form @submit.prevent="submitForm">
@@ -36,85 +46,89 @@
             <button type="submit">Envoyer</button>
         </form>
      </div>
-
-     
-     
-
-</template>
+  </div>
+  
+  </template>
 
 
 <script>
-import HelloWorld from './HelloWorld.vue'
+
 export default {
-  name: 'ImageVue',
-  components: {
-    HelloWorld
-}
-
-}
-
-
+  data() {
+    return {
+      isModalOpen: false,
+      project: {
+        title: '',
+        creationDate: '',
+        technologies: '',
+        visitLink: 'git@github.com:NiDeshayes/Portfolio.git',
+        githubLink: 'git@github.com:NiDeshayes/Portfolio.git',
+      },
+    };
+  },
+  methods: {
+    openModal() {
+      // Vous devrez définir ces valeurs en fonction du projet actuel
+      this.project = {
+        title: 'Titre du projet',
+        creationDate: 'Date de création',
+        technologies: 'Technologies utilisées',
+        visitLink: '',
+        githubLink: 'https://github.com/NiDeshayes/Portfolio',
+      };
+      this.isModalOpen = true;
+    },
+    closeModal() {
+      this.isModalOpen = false;
+    },
+    closeModalOutside(event) {
+      // Fermer la modal si le clic provient de l'arrière-plan
+      if (event.target.tagName === 'DIALOG') {
+        this.closeModal();
+      }
+      
+    },
+  },
+};
 </script>
 
+<style scoped>
+/* ... Vos styles existants ... */
 
-<style>
-
-
-.background-container {
- 
- z-index: -1;
- max-width: 100%;
- height: 200px;
- padding-top: 25px;
- padding-left: 50px;
- 
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
 }
 
-.resized-image {
-   width: 1000px;
-   height: 500px;
-   left: 245px;
-   
-
+.modal-dialog {
+  position: relative;
 }
 
-.resized-image-false {
-
- max-width: 1000px;
-   max-height: 1000px;
-   left: 50px;
-   
-
-}
-
-.formulaire {
-
-    padding-top: 400px;
-
-}
-
-h1 {
-
-    font-size:medium;
-    color: black;
-    margin:0;
-}
-
-h2 {
-
-    font-size: medium;
-    color: black;
-}
-
-
-.boutons {
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   text-align: center;
-  margin-top: 350px;
-  
+
 }
 
-.boutons button {
-  margin: 0 10px; /* Ajoute une marge entre les boutons */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
 }
 
 </style>

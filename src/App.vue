@@ -1,4 +1,5 @@
 <template>
+  
   <div>
     <div class="header">
       <header class="logo-header" @click="goToHome">
@@ -18,14 +19,14 @@
       <div class="social-icons">
         <ul>
 
-          <li><a href="https://twitter.com/twitterfrance"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="https://www.linkedin.com/home?originalSubdomain=fr"><i class="fab fa-linkedin"></i></a></li>
-          <li><a href="https://github.com/"><i class="fab fa-github"></i></a></li>
+          <li><a href="https://twitter.com/twitterfrance" target="_blank"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://www.linkedin.com/home?originalSubdomain=fr" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a></li>
           
         </ul>
         <!-- Ajoutez d'autres icônes de réseaux sociaux avec des liens au besoin -->
       </div>
-      <p> 2023 Votre Nom - Tous droits réservés</p>
+      <p> DESHAYES Nicolas- Dernière mise à jour le 11/12/2023</p>
       
     </div>
   </footer>
@@ -86,13 +87,11 @@ header img {
       cursor: pointer;
 }
 
-.header{
-  background-color: #333;
-}
+
 
 .footer {
-  background-color: #333;
-  color: #fff;
+
+  
   padding: 20px;
   text-align: center;
 }
@@ -119,9 +118,8 @@ header img {
   height: 30px;
 }
 
-.body{
-  background-color: #333;
-}
+
+
 
 </style>
 

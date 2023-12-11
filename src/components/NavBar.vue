@@ -6,8 +6,8 @@
         <ul v-if="isOpen" class="nav-list">
           <li><a href="/">Accueil</a></li>
           <li><a href="/CV">CV</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="../assets/CAHIER_DES_CHARGES.pdf">Cahier des charges</a></li>
+          <li><a href="#">404</a></li>
+          <li><a href="/CahierDesCharges">Cahier des charges</a></li>
           <li><a href="https://www.linkedin.com/home?originalSubdomain=fr"><i class="fab fa-linkedin"></i></a></li>
           <li><a href="https://twitter.com/twitterfrance"><i class="fab fa-twitter"></i></a></li>
           <li><a href="https://github.com/"><i class="fab fa-github"></i></a></li>
@@ -47,13 +47,14 @@
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 20;
+    top: 20 px;
     left: 00px; /* Initial position off-screen */
-    transition: left 0.3s ease; /* Smooth transition effect */
+    transition: left 1.3s ease; /* Smooth transition effect */
   }
   
   .navbar-open {
     left: 0; /* Move the navbar on-screen when isOpen is true */
+
   }
   
   button {
