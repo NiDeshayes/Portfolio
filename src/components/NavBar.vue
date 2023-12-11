@@ -6,11 +6,11 @@
         <ul v-if="isOpen" class="nav-list">
           <li><a href="/">Accueil</a></li>
           <li><a href="/CV">CV</a></li>
-          <li><a href="#">404</a></li>
+          <li><a href="/Image404Vue">404</a></li>
           <li><a href="/CahierDesCharges">Cahier des charges</a></li>
-          <li><a href="https://www.linkedin.com/home?originalSubdomain=fr"><i class="fab fa-linkedin"></i></a></li>
-          <li><a href="https://twitter.com/twitterfrance"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="https://github.com/"><i class="fab fa-github"></i></a></li>
+          <li><a href="https://twitter.com/twitterfrance" target="_blank"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://www.linkedin.com/home?originalSubdomain=fr" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a></li>
         </ul>
         <ul v-if="isOpen" class="nav-list">
   

@@ -1,14 +1,16 @@
 <template>
   
+  <div class="presentation">
+    <h1>DESHAYES Nicolas</h1>
+    <p>Je suis actuellement entrain de faire une formation de developpeur web avec le centre de formation europeen de formations
+       et j'apprend les languages HTML/CSS/Java Script , voici le rendu final de mon projet "Portfolio" fait avec vue js 3 et rendu sur GitHub</p>
+
+  </div>
+
   <div>
     
     <div class="background-container">
-      <img
-        alt="Vue logo"
-        src="../assets/Fond.jpg"
-        class="resized-image"
-        @click="openModal"
-      />
+      <img alt="Vue logo" src="../assets/Fond.jpg" class="resized-image" @click="openModal" />
       <dialog v-if="isModalOpen" @close="closeModal" @click="closeModalOutside">
         <div class="modal-content">
           <button class="close-button" @click="closeModal">Fermer la modal</button>
@@ -29,8 +31,7 @@
   </div>
 
   <div>
-
-
+    
     <div class="formulaire">
         <h2>Formulaire de Contact</h2>
         <form @submit.prevent="submitForm">
@@ -44,15 +45,19 @@
             <textarea v-model="message" required></textarea>
 
             <button type="submit">Envoyer</button>
+        
         </form>
      </div>
+
+     <div v-if="messageSent" class="success-message">
+    Votre message a bien été envoyé à telle adresse.
+  </div>
   </div>
   
   </template>
 
 
 <script>
-
 export default {
   data() {
     return {
@@ -64,6 +69,7 @@ export default {
         visitLink: 'git@github.com:NiDeshayes/Portfolio.git',
         githubLink: 'git@github.com:NiDeshayes/Portfolio.git',
       },
+      messageSent: false,  // Ajoutez la propriété messageSent ici
     };
   },
   methods: {
@@ -86,8 +92,14 @@ export default {
       if (event.target.tagName === 'DIALOG') {
         this.closeModal();
       }
-      
     },
+    submitForm() {
+      // Logique de traitement du formulaire...
+
+      // Marquer le formulaire comme soumis avec succès
+      this.messageSent = true;
+    },
+    // ... autres méthodes
   },
 };
 </script>
@@ -130,5 +142,12 @@ dialog {
   padding: 10px;
   cursor: pointer;
 }
+
+.presentation h1 {
+  font-size: 30px; /* Ajustez la taille de police selon vos préférences */
+  color: black;
+}
+
+  
 
 </style>

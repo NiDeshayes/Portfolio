@@ -5,6 +5,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import ImageVue from './components/ImageVue.vue'
 import CV from './components/CV.vue'
 import CahierDesCharges from './components/CahierDesCharges.vue'
+import Image404Vue from './components/Image404Vue.vue'
 
 const app = createApp(App);
 
@@ -24,6 +25,12 @@ const routes = [
     {
         path:   '/CahierDesCharges' ,
         component: CahierDesCharges ,
+
+
+    },
+    {
+        path:   '/Image404Vue' ,
+        component: Image404Vue ,
 
 
     },
