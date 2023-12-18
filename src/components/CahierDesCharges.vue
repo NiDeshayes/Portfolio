@@ -41,7 +41,7 @@ export default {
       if (this.currentIndex > 0) {
         this.currentIndex--;
       }
-    }, // <-- Ajout de la virgule ici
+    }, 
   },
 };
 </script>

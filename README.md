@@ -1,3 +1,15 @@
+
+Pour l'instalation et le lancement du projet vous avez besoin de NodeJs
+Visual studio code 
+
+pour lancer le site vous devez avoir installé / font awesome / materialize
+
+pour recuperer le projet via GitHub   git clone https://github.com/NiDeshayes/Portfolio.git
+acceder au bon repertoir : cd nom du projet
+git pull origin nom branche 
+
+
+
 # frontend
 
 ## Project setup
